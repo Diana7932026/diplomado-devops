@@ -15,7 +15,26 @@ on:                        # disparadores
     branches: [main]
   pull_request:
     branches: [main]
+jobs:
+  lint:
+    name: Lint y formato
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
 
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar Ruff
+        run: pip install ruff==0.15.11
+
+      - name: Revisar formato y estilo
+        run: |
+          ruff check .
+          ruff format --check .
 jobs:
   pruebas:
     runs-on: ubuntu-latest   # máquina nueva y vacía
