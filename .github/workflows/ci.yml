@@ -35,6 +35,7 @@ jobs:
         run: |
           ruff check .
           ruff format --check .
+          
 jobs:
   pruebas:
     runs-on: ubuntu-latest   # máquina nueva y vacía
