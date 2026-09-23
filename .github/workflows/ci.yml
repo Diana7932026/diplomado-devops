@@ -25,7 +25,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements-dev.txt
-      - run: pytest -v-
+      - run: pytest -v
 
       # TODO reto 1: instalar Python 3.12 (actions/setup-python@v7)
       # TODO reto 1: instalar las dependencias
